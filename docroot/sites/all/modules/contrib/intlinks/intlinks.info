@@ -1,0 +1,16 @@
+name = Internal Links
+description = Input filters which add node titles, as HTML 'title' attribute to internal links or unlinks unpublished nodes.
+core = 7.x
+project = intlinks
+files[] = intlinks_hide_bad_links.inc
+files[] = intlinks_title_filter.inc
+files[] = intlinks_common_functions.inc
+files[] = intlinks.module
+dependencies[] = filter
+
+; Information added by drupal.org packaging script on 2012-10-26
+version = "7.x-1.3"
+core = "7.x"
+project = "intlinks"
+datestamp = "1351243317"
+

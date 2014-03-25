@@ -1,0 +1,124 @@
+<?php
+
+/**
+ * @file
+ * Input filters which rewrite internal links and/or unlink unpublished nodes.
+ *
+ * This module contains two input filters. The main one is involved in adding
+ * link titles to links which don't have a title attribute and rewriting the
+ * HREF atttribute for normal Drupal paths (node/123) as URL aliases,
+ * if an alias exists.
+ *
+ * Links to other nodes on a site are identified, node titles are accessed, and
+ * included as HTML "title" attribute in the link, only if no title already
+ * exists. HREF paths are also re-written if the value is a "normal" Drupal
+ * (node/123 -type) path; if there is a path alias, it is used instead. This
+ * makes for more user/SEO -friendly links and streamlines the editorial
+ * workflow. Note: Best to use on low-traffic sites without too many links, or
+ * on sites with page caching, since this module adds a significant additional
+ * load in terms of database queries on pages with many internal links.
+ *
+ * It also includes a "hide bad" links filter, which removes links (leaving
+ * behind whatever was between the <a> tagset, if the link was to unpublished
+ * content. It may not fit all use cases, so be a bit cautious with the use of
+ * this filter.
+ *
+ * @author Lowell Montgomery | Cocomore AG
+ *   @see http://drupal.org/user/628196
+ */
+
+/**
+ * Implements hook_help().
+ */
+function intlinks_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#intlinks':
+      $output = '<p>' . t('To use the Internal links filter, simply enable the Internal links title filter for one or more of your <a href="@text_formats">text formats</a>.', array(
+        '@text_formats' => url('admin/config/content/formats'))) . '</p><p>';
+      $output .= t('If you like, you can also enable the Internal links "hide bad" filter, which hides internal links to pages not yet published or to bad internal paths, rather than displaying links which would simply yield a "page not found" error.') . '</p><p>';
+      $output .= t('If you enable both filters, be sure to move the action of the "hide bad" filter before the "title" filter. There would not be much use in wasting queries on getting titles and re-writing links to unpublished content, only to remove the links with the "hide bad" filter, before display output.') . '</p><p>';
+      $output .= t('Note: For best performance, sites which uses these filters should cache the output. Use of these filters on each page load will add significant additional load in terms of database queries and processing. Caching output is especially recommended for high-volume sites with a lot of cross-linking between articles.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_filter_info().
+ */
+function intlinks_filter_info() {
+  $filters['intlinks title'] = array(
+    'title' => t('Internal links title filter'),
+    'description' => t('Identifies internal links in content and adds an HTML "title" attribute (if none already exists), using the linked node\'s node title. Also re-writes links to "normal Drupal paths" (e.g. node/123) as path alias if an alias exists.'),
+    'process callback' => 'intlinks_title_filter_process',
+//    'settings callback' => 'intlinks_title_filter_settings',
+    'default settings' => array(
+      'intlinks_title_display_tip' => 1,
+    ),
+    'tips callback' => 'intlinks_title_filter_tips',
+  );
+  $filters['intlinks hide bad'] = array(
+    'title' => t('Internal links hide bad filter'),
+    'description' => t('Identifies bad internal links in content (unpublished or non-existent) and suppresses their output'),
+    'process callback' => 'intlinks_hide_bad_filter_process',
+//    'settings callback' => 'intlinks_hide_bad_filter_settings',
+    'default settings' => array(
+      'intlinks_hide_bad_display_tip' => 1,
+    ),
+    'tips callback' => 'intlinks_hide_bad_filter_tips',
+  );
+  return $filters;
+}
+
+/**
+ * Filter process callback for intlinks_title filter.
+ *
+ * @param $text
+ *   Text to be filtered. Regex pattern matches links to be processed.
+ *
+ * @return
+ *   Filtered text with processed links including HTML title attributes
+ *   (for links where none was there, before) and URL aliases (if original
+ *   link was a normal Drupal path, e.g. to node/123
+ */
+function intlinks_title_filter_process($text) {
+  include_once 'intlinks_title_filter.inc';
+  return preg_replace_callback('%<a([^>]*?href="([^"]+?)"[^>]*?)>%i',
+    "_intlinks_title_process_link", $text);
+}
+
+/**
+ * Filter tips callback for intlinks_title filter.
+ */
+function intlinks_title_filter_tips($filter, $format, $long = FALSE) {
+  if ($filter->settings['intlinks_title_display_tip']) {
+    return t('Adds node titles to internal links found in content (as HTML "title" attribute).');
+  }
+}
+
+/**
+ * Filter process callback for intlinks_hide_bad_filter.
+ *
+ * @param $text
+ *   Text to be filtered. Regex pattern matches links to be processed.
+ *
+ * @return
+ *   Filtered text with processed links. Internal links to bad paths are
+ *   removed, leaving just the unlinked text (what was between the <a> tagset)
+ *   If all is well, simply returns unchanged link. Allows editorial
+ *   staff to link unpublished articles and not have links show up till the
+ *   article is published.
+ */
+function intlinks_hide_bad_filter_process($text) {
+  include_once 'intlinks_hide_bad_links.inc';
+  return preg_replace_callback('%<a[^>]*?href="([^"]+?)"[^>]*?>(.*?)</a>%i',
+    "_intlinks_process_bad_link", $text);
+}
+
+/**
+ * Filter tips callback for intlinks_hide_bad filter.
+ */
+function intlinks_hide_bad_filter_tips($filter, $format, $long = FALSE) {
+  if ($filter->settings['intlinks_hide_bad_display_tip']) {
+    return t('Strips broken/unpublished internal links from output.');
+  }
+}
