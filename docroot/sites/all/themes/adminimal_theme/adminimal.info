@@ -3,20 +3,23 @@ description = A simple one-column, tableless, minimalist administration theme.
 core = 7.x
 stylesheets[screen][] = css/reset.css
 stylesheets[screen][] = css/style.css
-stylesheets[screen][] = css/custom.css
+stylesheets[screen][] = css/responsive.css
+scripts[] = js/jRespond.js
 scripts[] = js/adminimal_theme.js
 settings[shortcut_module_link] = 1
 settings[display_icons_config] = 1
+regions[content_before] = Before Content
 regions[content] = Content
+regions[content_after] = After Content
 regions[help] = Help
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 regions[sidebar_first] = First sidebar
 regions_hidden[] = sidebar_first
 
-; Information added by Drupal.org packaging script on 2014-02-16
-version = "7.x-1.1"
+; Information added by Drupal.org packaging script on 2014-04-12
+version = "7.x-1.4"
 core = "7.x"
 project = "adminimal_theme"
-datestamp = "1392580407"
+datestamp = "1397332453"
 

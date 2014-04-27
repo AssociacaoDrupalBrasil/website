@@ -8,11 +8,6 @@ div.vertical-tabs {
   margin: 10px 0;
   position: relative;
 }
-div.vertical-tabs fieldset {
-  border: 0;
-  padding: 0;
-  margin: 0;
-}
 div.vertical-tabs .field-group-tab fieldset {
   border: solid 1px #ddd;
   border-top: 3px solid #0074BD;
