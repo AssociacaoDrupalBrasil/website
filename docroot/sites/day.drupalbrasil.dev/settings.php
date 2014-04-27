@@ -525,5 +525,5 @@ if (isset($_SERVER['DEVDESKTOP_DRUPAL_SETTINGS_DIR']) && file_exists($_SERVER['D
 // settings.php for development on your local workstation, set $db_url
 // (Drupal 5 or 6) or $databases (Drupal 7) as described in comments above.
 if (file_exists('/var/www/site-php')) {
-  require('/var/www/site-php/drupalbrasil/drupalbrasil-settings.inc');
+    require('/var/www/site-php/drupalbrasil/day_drupalbrasil_dev-settings.inc');
 }
