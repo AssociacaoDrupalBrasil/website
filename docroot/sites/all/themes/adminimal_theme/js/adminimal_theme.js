@@ -20,28 +20,8 @@ var jRes = jRespond([
 // Modify the Search field for module filter.
 Drupal.behaviors.adminimal_module_filter_box = {
   attach: function (context, settings) {
-    //code starts
-	  $('input#edit-module-filter-name').each(function(){
-
-	    var defaultVal = Drupal.t('Search');
-	    
-	    $(this).focus(function(){
-	      if ($(this).val() == defaultVal){
-	        $(this).val('');
-	      }
-	      $(this).removeClass('empty');
-	    })
-
-	    .blur(function(){
-	      if ($(this).val() == ''){
-	        $(this).addClass('empty').val(defaultVal);
-	      }
-	    })
-
-	    .blur().addClass('empty');
-
-	  });
-    //code ends
+    //Add default hint value using the HTML5 placeholder attribute.
+    $('input#edit-module-filter-name').attr( "placeholder", Drupal.t('Search') );
   }
 };
 
@@ -105,6 +85,27 @@ Drupal.behaviors.adminimal_move_active_primary_tab = {
 				}
 		});
 	}
+};
+
+// Remove outline when clicking on links.
+Drupal.behaviors.adminimal_link_focus_on_click = {
+  attach: function (context, settings) {
+
+  	// Remove focus outlines on keypress.
+		$("body.adminimal-theme a").keypress(function() {
+			this.blur();
+			this.hideFocus = false;
+			this.style.outline = null;
+		});
+
+  	// Remove focus outlines on mousedown (click).
+		$("body.adminimal-theme a, select, input, textarea, label").mousedown(function() {
+			this.blur();
+			this.hideFocus = true;
+			this.style.outline = 'none';
+		});
+
+  }
 };
 
 })(jQuery);

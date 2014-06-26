@@ -39,7 +39,7 @@
 		</div>
 	<?php endif; ?>
 
-	<?php if ($page['content_before']): ?>
+	<?php if (isset($page['content_before'])): ?>
 		<div id="content-before">
 			<?php print render($page['content_before']); ?>
 		</div>
@@ -47,15 +47,15 @@
 
 	<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 
-	<?php if ($page['content']['dashboard']): ?>
-		<div id="dashboard">
+	<?php if (isset($page['content']['dashboard'])): ?>
+		<div id="dashboard-wrapper">
 			<?php print render($page['content']['dashboard']); ?>
 		</div>
 	<?php endif; ?>
 
 	<?php print render($page['content']['system_main']); ?>
 
-	<?php if ($page['content_after']): ?>
+	<?php if (isset($page['content_after'])): ?>
 		<div id="content-after">
 			<?php print render($page['content_after']); ?>
 		</div>

@@ -1,10 +1,3 @@
-/**
- * Generic elements.
- *//* Remove the webkit outline */
-* {
-  outline-style: none !important;
-}
-
 /* Import the Open Sans webfont from Google CDN */
 @font-face {
   font-family: 'Open Sans';
@@ -679,7 +672,7 @@ fieldset legend {
   font-weight: 300;
   margin: 0;
 	margin: 0 0.5em 0 0;
-	padding: 0.25em 0;
+	padding: 0.5em 0;
   width: initial;
 }
 
@@ -698,7 +691,7 @@ fieldset legend {
 }
 
 .form-managed-file .form-file,.form-managed-file .form-submit {
-  margin-right: 1em;
+  margin: 0 1em;
 }
 
 input.empty {
@@ -1107,6 +1100,7 @@ div.breadcrumb a:hover {
 
 #overlay-titlebar {
   padding: 0;
+  white-space: normal;
 }
 
 h1#overlay-title {
@@ -1166,6 +1160,7 @@ h1#overlay-title {
   line-height: 1.54em;
   margin: 0;
   right: 0px;
+  white-space: nowrap;
 }
 
 /* Shortcut theming */
@@ -1427,9 +1422,10 @@ input.form-submit,
 a.button,
 div.exposed-filters input#edit-submit {
   cursor: pointer;
-  background: #f0f0f0;
-  border: none;
-  padding: 6px 10px;
+  background: #fff;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px;
+  padding: 4px 10px;
   margin-bottom: 1em;
   margin-right: 1em;/* LTR */
   color: #777777;
@@ -1442,8 +1438,9 @@ div.exposed-filters input#edit-submit {
 input.form-submit:hover,
 a.button:hover,
 div.exposed-filters input#edit-submit:hover {
-  background: #0074BD;
-  color: #fff;
+  background: #fff;
+  color: #0074BD;
+  border-color: #0074BD;
 }
 
 input.form-submit:active,
@@ -1458,8 +1455,11 @@ input#edit-actions-submit,
 input[id^="save-continue"],
 input[id^="edit-save"],
 input#edit-save,
+input#edit-submit,
 input#edit-actions-save {
   cursor: pointer;
+  border-radius: 0;
+  border: none;
   padding: 5px 10px;
   margin-bottom: 1em;
   margin-right: 1em;/* LTR */
@@ -1476,8 +1476,12 @@ input#edit-actions-submit:hover,
 input[id^="save-continue"]:hover,
 input[id^="edit-save"]:hover,
 input#edit-save:hover,
+input#edit-submit:hover,
 input#edit-actions-save:hover {
   background: #0a6700;
+  border-radius: 0;
+  border: none;
+  color: #fff;
 }
 
 input#edit-submit:active,
@@ -1485,9 +1489,13 @@ input#edit-actions-submit:active,
 input[id^="save-continue"]:active,
 input[id^="edit-save"]:active,
 input#edit-save:active,
+input#edit-submit:active,
 input#edit-actions-save:active {
   box-shadow: 0 2px 2px rgba(0,0,0,0.75) inset;
   background: #333;
+  border-radius: 0;
+  border: none;
+  color: #fff;
 }
 
 /* Red Button */
@@ -1495,9 +1503,12 @@ input#edit-delete,
 input#remove-button,
 input#edit-remove,
 input#edit-clear,
+input[id$="remove-button"],
 .page-admin-modules-uninstall input#edit-submit {
   cursor: pointer;
   padding: 5px 10px;
+  border-radius: 0;
+  border: none;
   margin-bottom: 1em;
   margin-right: 1em;/* LTR */
   color: #fff;
@@ -1512,17 +1523,25 @@ input#edit-delete:hover,
 input#remove-button:hover,
 input#edit-remove:hover,
 input#edit-clear:hover,
+input[id$="remove-button"]:hover,
 body.page-admin-modules-uninstall input#edit-submit:hover {
-    background: #990000;
+  background: #990000;
+  border-radius: 0;
+  border: none;
+  color: #fff;
 }
 
 input#edit-delete:active,
 input#remove-button:active,
 input#edit-remove:active,
 input#edit-clear:active,
+input[id$="remove-button"]:active,
 body.page-admin-modules-uninstall input#edit-submit:active {
   box-shadow: 0 2px 2px rgba(0,0,0,0.75) inset;
   background: #333;
+  border-radius: 0;
+  border: none;
+  color: #fff;
 }
 
 /* Blue Button */
@@ -1531,6 +1550,8 @@ input#edit-next,
 input#preview-submit,
 input[id^="edit-return"] {
   cursor: pointer;
+  border-radius: 0;
+  border: none;
   padding: 5px 10px;
   margin-bottom: 1em;
   margin-right: 1em;/* LTR */
@@ -1547,6 +1568,9 @@ input#edit-next:hover,
 input#preview-submit:hover,
 input[id^="edit-return"]:hover {
   background: #004c99;
+  border-radius: 0;
+  border: none;
+  color: #fff;
 }
 
 input#edit-preview:active,
@@ -1555,6 +1579,9 @@ input#preview-submit:active,
 input[id^="edit-return"]:active {
   box-shadow: 0 2px 2px rgba(0,0,0,0.75) inset;
   background: #333;
+  border-radius: 0;
+  border: none;
+  color: #fff;
 }
 
 /* Orange Button */
@@ -1562,6 +1589,8 @@ input[id^="edit-return"]:active {
 #edit-actions-cancel,
 input#edit-buttons-revert {
   cursor: pointer;
+  border-radius: 0;
+  border: none;
   padding: 5px 10px;
   margin-bottom: 1em;
   margin-right: 1em;/* LTR */
@@ -1576,6 +1605,8 @@ input#edit-buttons-revert {
 a#edit-cancel,a#edit-actions-cancel {
   padding: 6px 10px;
   text-decoration: none;
+  border-radius: 0;
+  border: none;
 }
 
 #edit-cancel:hover,
@@ -1583,6 +1614,9 @@ a#edit-cancel,a#edit-actions-cancel {
 input#edit-buttons-revert:hover {
   background: #ef6114;
   text-decoration: none;
+  border-radius: 0;
+  border: none;
+  color: #fff;
 }
 
 #edit-cancel:active,
@@ -1590,6 +1624,9 @@ input#edit-buttons-revert:hover {
 input#edit-buttons-revert:active {
   box-shadow: 0 2px 2px rgba(0,0,0,0.75) inset;
   background: #333;
+  border-radius: 0;
+  border: none;
+  color: #fff;
 }
 
 /* Configuration menu blocks */
@@ -1715,7 +1752,7 @@ body.adminimal-theme .token-tree th {
   font-family: "Open Sans", "Segoe UI", "Helvetica", sans-serif;
   font-size: 23px;
   font-weight: 300;
-  padding: 0.25em;
+  padding: 0.25em 0;
 }
 
 /* Views and Ctools */
@@ -2298,4 +2335,47 @@ body.adminimal-backend a.cke_dialog_ui_button_ok:hover {
 	border: none;
 	border-left: 5px solid #6B6B6B;
 	padding: 10px 15px;
+}
+
+body.adminimal-backend ul.rules-operations a, .rules-elements-add ul.action-links a {
+	font-size: inherit;
+}
+
+body.adminimal-backend .rules-autocomplete-button {
+  height: 27px;
+  top: -2px;
+}
+
+body.adminimal-backend ul.rules-autocomplete .rules-dsac-group {
+  background-color: transparent;
+}
+
+#media-browser-page #branding {
+	background: #ddd;
+  margin: 0;
+  padding: 0;
+}
+
+#media-tabs-wrapper {
+    float: left;
+}
+
+.exposed-filters .form-select {
+    margin: 0.5em;
+}
+
+.exposed-filters .container-inline .form-actions, .exposed-filters .container-inline.form-actions {
+    margin: 0.5em 0;
+}
+
+.views-ui-dialog .ui-dialog-titlebar-close span {
+    display: block;
+    left: 0;
+    top: 0;
+}
+
+.views-ui-dialog #edit-options .collapsible {
+    float: left;
+    width: auto;
+    clear: both;
 }

@@ -39,7 +39,7 @@
 		</div>
 	<?php endif; ?>
 
-	<?php if ($page['content_before']): ?>
+	<?php if (isset($page['content_before'])): ?>
 		<div id="content-before">
 			<?php print render($page['content_before']); ?>
 		</div>
@@ -49,7 +49,7 @@
 
 	<?php print render($page['content']['system_main']); ?>
 
-	<?php if ($page['content_after']): ?>
+	<?php if (isset($page['content_after'])): ?>
 		<div id="content-after">
 			<?php print render($page['content_after']); ?>
 		</div>

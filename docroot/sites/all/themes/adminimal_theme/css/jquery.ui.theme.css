@@ -145,8 +145,9 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
     height: 200px; /*must have*/
 }.ui-dialog { position: absolute; padding: .2em; width: 300px; overflow: hidden; }
 .ui-dialog .ui-dialog-titlebar { padding: .4em 1em; position: relative;  }
-.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; }
-.ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+body.adminimal-theme .ui-dialog .ui-dialog-title { float: left; font-family: inherit; font-size: 27px; font-weight: 100; line-height: 1.2em; margin: 10px 6px; }
+body.adminimal-theme .ui-dialog .ui-dialog-titlebar-close { background: #B73939; height: 22px; margin: 0; padding: 0; position: absolute; right: 8px; top: 0; width: 45px; }
+body.adminimal-theme .ui-dialog .ui-dialog-titlebar-close:hover { background: #e55454; }
 .ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
 .ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
 .ui-dialog .ui-dialog-content { position: relative; border: 0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
@@ -206,6 +207,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 .ui-tabs { position: relative; padding: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
 .ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0; }
 .ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 0; margin: 1px .2em 0 0; border-bottom: 0; padding: 0; white-space: nowrap; }
+body.adminimal-theme .ui-tabs .ui-tabs-nav li { top: 0; margin: 0; }
 .ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; }
 .ui-tabs .ui-tabs-nav li.ui-tabs-active { margin-bottom: -1px; padding-bottom: 1px; }
 .ui-tabs .ui-tabs-nav li.ui-tabs-active a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-tabs-loading a { cursor: text; }
@@ -227,19 +229,19 @@ body .ui-tooltip { border-width: 2px; }
 
 /* Component containers
 ----------------------------------*/
-.ui-widget { font-family: sans-serif; font-size: 12px !important; }
+.ui-widget { font-family: inherit; font-size: 12px !important; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: sans-serif; font-size: 1em; }
-.ui-widget-content { border: 1px solid #ccccc; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #333; }
+.ui-widget-content { border: 1px solid #cccccc; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #333; }
 .ui-widget-content a { color: #333; }
 .ui-widget-header { border: 1px solid #333; background: #333 url(images/ui-bg_flat_100_333333_40x100.png) 50% 50% repeat-x; color: #fff; font-weight: bold; }
 .ui-widget-header a { color: #fff; }
 
 /* Interaction states
 ----------------------------------*/
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #ddd; background: #ddd url(images/ui-bg_flat_75_dddddd_40x100.png) 50% 50% repeat-x; font-weight: normal; color: #555555; }
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: none; background: #ddd url(images/ui-bg_flat_75_dddddd_40x100.png) 50% 50% repeat-x; font-weight: normal; color: #555555; }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #555555; text-decoration: none; }
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #333; background: #333 url(images/ui-bg_flat_100_333333_40x100.png) 50% 50% repeat-x; font-weight: normal; color: #fff; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 0; background: #333 url(images/ui-bg_flat_100_333333_40x100.png) 50% 50% repeat-x; font-weight: normal; color: #fff; }
 .ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited { color: #fff; text-decoration: none; }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #0074bd; background: #0074bd url(images/ui-bg_flat_65_0074bd_40x100.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; }
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #ffffff; text-decoration: none; }
@@ -379,8 +381,8 @@ body .ui-tooltip { border-width: 2px; }
 .ui-icon-plusthick { background-position: -32px -128px; }
 .ui-icon-minus { background-position: -48px -128px; }
 .ui-icon-minusthick { background-position: -64px -128px; }
-.ui-icon-close { background-position: -80px -128px; }
-.ui-icon-closethick { background-position: -96px -128px; }
+body.adminimal-theme .ui-icon-close { background-image: url("images/x-white.png"); background-position: 0 0; }
+body.adminimal-theme .ui-icon-closethick { background-image: url("images/x-white.png"); background-position: 14px 3px; width: 45px; left: 0; top: 0;}
 .ui-icon-key { background-position: -112px -128px; }
 .ui-icon-lightbulb { background-position: -128px -128px; }
 .ui-icon-scissors { background-position: -144px -128px; }
