@@ -1,7 +1,7 @@
 # Ignore configuration files that may contain sensitive information.
-.DS_Store
+sites/*/settings*.php
+sites/drupalbrasil.dev.local
 
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
-sites/*.local
