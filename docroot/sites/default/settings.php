@@ -526,9 +526,29 @@ if (file_exists('/var/www/site-php')) {
 
 //memcache para acquia cloud
 if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+  
+  //memcache
   $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
   $conf['cache_default_class'] = 'MemCacheDrupal';
   $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+  
+  //acquia stuff
+  switch ($_ENV['AH_SITE_ENVIRONMENT']) {
+    case 'dev':
+     $conf['file_private_path'] = '/mnt/files/drupalbrasil.dev/sites/default/files-private';
+     $conf['file_public_path'] = '/mnt/files/drupalbrasil.dev/sites/default/files';
+     break;
+
+    case 'test':
+     $conf['file_private_path'] = '/mnt/files/drupalbrasil.test/sites/default/files-private';
+     $conf['file_public_path'] = '/mnt/files/drupalbrasil.test/sites/default/files';
+     break;
+
+    case 'prod':
+     $conf['file_private_path'] = '/mnt/files/drupalbrasil/sites/default/files-private';
+     $conf['file_public_path'] = '/mnt/files/drupalbrasil/sites/default/files';
+     break;
+  }
 }
 
 //<DDSETTINGS>
