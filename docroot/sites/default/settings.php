@@ -494,7 +494,7 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
  *
  * To enable this functionality, remove the leading hash sign below.
  */
-# drupal_fast_404();
+drupal_fast_404();
 
 /**
  * Authorized file system operations:
@@ -511,6 +511,13 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+
+//memcache para acquia cloud
+if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+  $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
+  $conf['cache_default_class'] = 'MemCacheDrupal';
+  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+}
 
 //<DDSETTINGS>
 // Please don't edit anything between <DDSETTINGS> tags.
