@@ -3,3 +3,7 @@ docroot/files
 docroot/sites/*/files
 docroot/sites/*/private
 
+nbproject/
+.sass-cache/
+*.sql
+*.gz
