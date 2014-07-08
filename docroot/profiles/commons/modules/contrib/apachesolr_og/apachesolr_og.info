@@ -1,0 +1,15 @@
+name = Apache Solr Organic Groups
+description = Integrates Organic Groups and Apache Solr Search
+package = Apache Solr
+core = 7.x
+
+dependencies[] = apachesolr
+dependencies[] = og
+
+
+; Information added by drush on 2014-06-25
+version = "7.x-1.0+2-dev"
+core = "7.x"
+project = "apachesolr_og"
+datestamp = "1403672651"
+

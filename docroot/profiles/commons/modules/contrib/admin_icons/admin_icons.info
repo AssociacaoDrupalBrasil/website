@@ -1,0 +1,11 @@
+name = Icon fonts
+description = Icon font library for use with other modules and themes. 
+core = 7.x
+
+
+
+; Information added by drush on 2014-06-25
+version = ""
+project = "admin_icons"
+datestamp = "1403672651"
+

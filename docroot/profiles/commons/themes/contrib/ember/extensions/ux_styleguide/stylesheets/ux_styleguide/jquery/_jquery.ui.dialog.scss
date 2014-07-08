@@ -1,0 +1,82 @@
+//
+// @file
+// Provide replacement styles for jQuery UI.
+//
+
+.ui-dialog {
+  position: absolute;
+  overflow: hidden;
+  border: $base-border-width solid $color-border;
+  @include box-shadow(0 0 0 ms(-2) rgba($color-background-reverse, .2));
+  @include box-sizing(border-box);
+
+  .ui-dialog-titlebar {
+    position: relative;
+    padding: $rhythm-space $rhythm-space 0;
+    background-color: $color-background-reverse;
+    color: $color-text-light;
+  }
+
+  .ui-dialog-title {
+    @extend %font-sansserif-light;
+    display: block;
+    font-size: ms(3);
+    line-height: ms(1);
+  }
+
+  .ui-dialog-titlebar-close {
+    position: absolute;
+    display: block;
+    top: $rhythm-space-short;
+    right: $rhythm-space-short;
+    width: ms(0);
+    height: ms(0);
+    text-align: center;
+    line-height: 1em;
+    color: $color-text-reverse;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:before {
+      content: "\2715";
+    }
+  }
+
+  .ui-dialog-content {
+    position: relative;
+    border: 0;
+    background: none;
+    overflow: auto;
+    zoom: 1;
+  }
+
+  .ui-dialog-buttonpane {
+    text-align: left;
+    border-width: 1px 0 0 0;
+    background-image: none;
+    margin: .5em 0 0 0;
+    padding: .3em 1em .5em .4em;
+
+    .ui-dialog-buttonset {
+      float: right;
+    }
+
+    button {
+      margin: .5em .4em .5em 0;
+      cursor: pointer;
+    }
+  }
+
+  .ui-resizable-se {
+    width: 14px;
+    height: 14px;
+    right: 3px;
+    bottom: 3px;
+  }
+}
+
+.ui-draggable .ui-dialog-titlebar {
+  cursor: move;
+}

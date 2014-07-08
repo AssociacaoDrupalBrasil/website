@@ -1,0 +1,18 @@
+name = OAuth Connector
+description = OAuth support for the Connector module
+core = 7.x
+package = "Connector"
+dependencies[] = connector
+dependencies[] = oauth_common
+dependencies[] = oauth2_common
+dependencies[] = http_client
+dependencies[] = http_client_oauth
+dependencies[] = ctools
+
+
+; Information added by drush on 2014-06-25
+version = "7.x-1.0-beta2+0-dev"
+core = "7.x"
+project = "oauthconnector"
+datestamp = "1403672642"
+
