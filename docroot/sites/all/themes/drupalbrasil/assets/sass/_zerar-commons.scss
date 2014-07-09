@@ -1,0 +1,59 @@
+#name-and-slogan {
+  display: block;
+  -webkit-box-sizing: none;
+  -moz-box-sizing: none;
+  box-sizing: none;
+  width: 100%;
+  vertical-align: top;
+  min-height: none;
+  padding-right: 0;
+}
+.palette-black-blue-yellow #menu-bar.nav {
+  @include zerar-box-do-commons;
+}
+.palette-black-blue-yellow #menu-bar.nav ul.menu li a,
+#menu-bar.nav ul.menu li .palette-black-blue-yellow a {
+  @include zerar-box-do-commons;
+  border: none;
+}
+#menu-bar.nav ul.menu li:hover,
+#menu-bar.nav ul.menu li.active-trail {
+  background: none;
+}
+.commons-pod,
+.page-user .pane-views-panes .block-inner,
+.front.not-logged-in .pane-views-panes > div,
+.front.not-logged-in .pane-views > div,
+.front.not-logged-in body.page-node .pane-views-panes > div,
+.page-events .view-commons-events-upcoming .view-content,
+.pane-commons-bw-group > .block-inner,
+.view-display-id-commons_events_upcoming_page .views-row article,
+.view-commons-groups-directory > .view-content > .views-row > .node-teaser,
+.view-commons-groups-directory > .view-content > .views-row form,
+.view-commons-homepage-content .node-teaser.node-group > .view-content > .views-row > .node-teaser,
+.view-commons-homepage-content .node-teaser.node-group > .view-content > .views-row form,
+body.front.logged-in #views-exposed-form-commons-homepage-content-panel-pane-1 .views-exposed-widgets.widgets-active,
+.page-events .region-three-25-50-25-third .pane-views-panes .block-inner,
+.pane-search-result .block-content .search-results,
+.page-search-user .user-results {
+  @include zerar-box-do-commons;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+.commons-pod,
+.page-user .pane-views-panes,
+.front.not-logged-in .pane-views-panes,
+.front.not-logged-in .pane-views,
+.front.not-logged-in body.page-node .pane-views-panes,
+.page-events .view-commons-events-upcoming .view-content,
+.pane-commons-bw-group,
+.view-display-id-commons_events_upcoming_page .views-row,
+.view-commons-groups-directory > .view-content > .views-row,
+.view-commons-homepage-content .node-teaser.node-group > .view-content > .views-row,
+body.front.logged-in .view-commons-homepage-content > .view-content,
+body.front.logged-in #views-exposed-form-commons-homepage-content-panel-pane-1 .views-exposed-widgets.widgets-active,
+.page-events .region-three-25-50-25-third .pane-views-panes,
+.pane-search-result .block-content .search-results,
+.page-search-user .user-results {
+  @include zerar-box-do-commons;
+}

@@ -1,0 +1,6 @@
+@mixin zerar-box-do-commons {
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}

@@ -92,39 +92,26 @@
   <div class="header-color-row-one">
     <header<?php print $header_attributes; ?>>
 
-      <?php if ($site_logo || $site_name || $site_slogan): ?>
-        <!-- start: Branding -->
-        <div<?php print $branding_attributes; ?>>
+      <!-- start: Branding -->
+      <div<?php print $branding_attributes; ?>>
 
-          <?php if ($site_logo): ?>
-            <div id="logo">
-              <?php print $site_logo; ?>
-            </div>
+        <!-- start: Site name and Slogan hgroup -->
+        <hgroup<?php print $hgroup_attributes; ?>>
+
+          <?php if ($site_name): ?>
+            <h1<?php print $site_name_attributes; ?>><?php print $site_name; ?></h1>
           <?php endif; ?>
 
-          <?php if ($site_name || $site_slogan): ?>
-            <!-- start: Site name and Slogan hgroup -->
-            <hgroup<?php print $hgroup_attributes; ?>>
+        </hgroup><!-- /end #name-and-slogan -->
 
-              <?php if ($site_name): ?>
-                <h1<?php print $site_name_attributes; ?>><?php print $site_name; ?></h1>
-              <?php endif; ?>
-
-              <?php if ($site_slogan): ?>
-                <h2<?php print $site_slogan_attributes; ?>><?php print $site_slogan; ?></h2>
-              <?php endif; ?>
-
-            </hgroup><!-- /end #name-and-slogan -->
-          <?php endif; ?>
-
-        </div><!-- /end #branding -->
-      <?php endif; ?>
-
-      <!-- Navigation elements -->
-      <?php print render($page['menu_bar']); ?>
+      </div><!-- /end #branding -->
 
       <!-- region: Header -->
       <?php print render($page['header']); ?>
+      
+      <!-- Navigation elements -->
+      <?php print render($page['menu_bar']); ?>
+
     </header>
   </div>
 </div>
@@ -139,20 +126,22 @@
 
     <div id="page-top">
       <!-- Breadcrumbs -->
-      <?php if ($breadcrumb): print $breadcrumb; endif; ?>
+      <?php if ($breadcrumb): print $breadcrumb;
+      endif;
+      ?>
 
-      <?php print render($title_prefix); // Does nothing by default in D7 core ?>
+      <?php print render($title_prefix); // Does nothing by default in D7 core   ?>
 
-      <?php if ($title || $primary_local_tasks || $secondary_local_tasks || $action_links = render($action_links)): ?>
+<?php if ($title || $primary_local_tasks || $secondary_local_tasks || $action_links = render($action_links)): ?>
         <header<?php print $content_header_attributes; ?>>
 
-          <?php if ($title && !isset($hide_panelized_title)): ?>
+            <?php if ($title && !isset($hide_panelized_title)): ?>
             <h2 id="page-title">
-              <?php print $title; ?>
+            <?php print $title; ?>
             </h2>
           <?php endif; ?>
 
-          <?php if ($primary_local_tasks || $secondary_local_tasks || $action_links): ?>
+  <?php if ($primary_local_tasks || $secondary_local_tasks || $action_links): ?>
             <div id="tasks">
 
               <?php if ($primary_local_tasks): ?>
@@ -165,46 +154,50 @@
 
               <?php if ($action_links = render($action_links)): ?>
                 <ul class="action-links clearfix"><?php print $action_links; ?></ul>
-              <?php endif; ?>
+    <?php endif; ?>
 
             </div>
-          <?php endif; ?>
+  <?php endif; ?>
 
         </header>
-      <?php endif; ?>
+<?php endif; ?>
     </div>
     <div id="content-column" class="content-column" role="main">
       <div class="content-inner">
-        <?php print render($page['help']); ?>
+<?php print render($page['help']); ?>
 
         <!-- region: Highlighted -->
-        <?php print render($page['highlighted']); ?>
+<?php print render($page['highlighted']); ?>
 
         <<?php print $tag; ?> id="main-content">
 
-          <!-- region: Main Content -->
+        <!-- region: Main Content -->
           <?php if ($content = render($page['content'])): ?>
-            <div id="content" class="region">
-              <?php print $content; ?>
-            </div>
-          <?php endif; ?>
+          <div id="content" class="region">
+          <?php print $content; ?>
+          </div>
+<?php endif; ?>
 
-          <!-- Feed icons (RSS, Atom icons etc -->
-          <?php print $feed_icons; ?>
+        <!-- Feed icons (RSS, Atom icons etc -->
+        <?php print $feed_icons; ?>
 
-          <?php print render($title_suffix); // Prints page level contextual links ?>
+<?php print render($title_suffix); // Prints page level contextual links   ?>
 
         </<?php print $tag; ?>><!-- /end #main-content -->
 
         <!-- region: Content Aside -->
-        <?php print render($page['content_aside']); ?>
+<?php print render($page['content_aside']); ?>
 
       </div><!-- /end .content-inner -->
     </div><!-- /end #content-column -->
 
     <!-- regions: Sidebar first and Sidebar second -->
-    <?php $sidebar_first = render($page['sidebar_first']); print $sidebar_first; ?>
-    <?php $sidebar_second = render($page['sidebar_second']); print $sidebar_second; ?>
+    <?php $sidebar_first = render($page['sidebar_first']);
+    print $sidebar_first;
+    ?>
+<?php $sidebar_second = render($page['sidebar_second']);
+print $sidebar_second;
+?>
 
   </div><!-- /end #columns -->
 
@@ -214,8 +207,8 @@
   <!-- region: Footer -->
   <?php if ($page['footer']): ?>
     <footer<?php print $footer_attributes; ?>>
-      <?php print render($page['footer']); ?>
+  <?php print render($page['footer']); ?>
     </footer>
-  <?php endif; ?>
+<?php endif; ?>
 
 </div>

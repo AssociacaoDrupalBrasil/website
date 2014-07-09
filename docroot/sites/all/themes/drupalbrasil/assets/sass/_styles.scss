@@ -1,0 +1,12 @@
+$font-default: 'Open Sans',sans-serif;
+
+body {
+  font-family: $font-default;
+}
+h2 {
+  font-family: $font-default;
+}
+#page-title,
+.search-results-title {
+  font-size: 2em;
+}

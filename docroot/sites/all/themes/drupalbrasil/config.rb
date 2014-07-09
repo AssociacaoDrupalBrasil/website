@@ -49,10 +49,3 @@ relative_assets = true
 # To disable debugging comments that display the original location of your
 # selectors. Uncomment:
 # line_comments = false
-
-# Pass options to sass.
-# - For development, we turn on the FireSass-compatible debug_info.
-# - For production, we force the CSS to be regenerated even though the source
-#   scss may not have changed, since we want the CSS to be compressed and have
-#   the debug info removed.
-sass_options = (environment == :development) ? {:debug_info => true} : {:always_update => true}

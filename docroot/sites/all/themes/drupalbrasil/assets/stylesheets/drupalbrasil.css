@@ -1,67 +1,56 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\000031}}
+/* line 3, ../sass/_styles.scss */
 body {
-  background-color: #f4f7fb;
+  font-family: "Open Sans", sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\000035}}
-.header-wrapper .header-color-row-one {
-  background: #fcfcfc;
-  height: 130px;
+/* line 6, ../sass/_styles.scss */
+h2 {
+  font-family: "Open Sans", sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\0000312}}
-#header #site-name a {
-  display: block;
-  height: auto;
-  margin: 50px 0 0 20px;
-  color: #999;
+/* line 10, ../sass/_styles.scss */
+#page-title,
+.search-results-title {
   font-size: 2em;
-  text-transform: uppercase;
-  font-family: Arial;
-  line-height: 1em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\0000325}}
-#header #logo,
-#header #menu-bar,
-#header .region.region-header {
-  margin-top: 20px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\0000328}}
-#header #logo a,
-#header #menu-bar a,
-#header .region.region-header a {
-  color: #999;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\0000332}}
-#header #menu-bar.nav ul.menu li a {
-  text-shadow: none;
-  color: #999;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\0000337}}
+/* line 1, ../sass/_zerar-commons.scss */
+#name-and-slogan {
+  display: block;
+  -webkit-box-sizing: none;
+  -moz-box-sizing: none;
+  box-sizing: none;
+  width: 100%;
+  vertical-align: top;
+  min-height: none;
+  padding-right: 0;
+}
+
+/* line 11, ../sass/_zerar-commons.scss */
 .palette-black-blue-yellow #menu-bar.nav {
-  border: none;
+  border-radius: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\0000344}}
+/* line 15, ../sass/_zerar-commons.scss */
 .palette-black-blue-yellow #menu-bar.nav ul.menu li a,
 #menu-bar.nav ul.menu li .palette-black-blue-yellow a {
-  border: none;
+  border-radius: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\0000351}}
+/* line 20, ../sass/_zerar-commons.scss */
 #menu-bar.nav ul.menu li:hover,
 #menu-bar.nav ul.menu li.active-trail {
   background: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\0000369}}
+/* line 38, ../sass/_zerar-commons.scss */
 .commons-pod,
 .page-user .pane-views-panes .block-inner,
 .front.not-logged-in .pane-views-panes > div,
@@ -78,18 +67,118 @@ body.front.logged-in #views-exposed-form-commons-homepage-content-panel-pane-1 .
 .page-events .region-three-25-50-25-third .pane-views-panes .block-inner,
 .pane-search-result .block-content .search-results,
 .page-search-user .user-results {
-  padding: 15px;
   border-radius: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  padding: 15px;
   border: 1px solid #ddd;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pedro\/Workspace\/www-localhost\/drupalbrasil\/docroot\/sites\/all\/themes\/drupalbrasil\/assets\/sass\/drupalbrasil\.scss}line{font-family:\0000378}}
-.commons-pod, .page-user .pane-views-panes, .front.not-logged-in .pane-views-panes, .front.not-logged-in .pane-views, .front.not-logged-in body.page-node .pane-views-panes, .page-events .view-commons-events-upcoming .view-content, .pane-commons-bw-group, .view-display-id-commons_events_upcoming_page .views-row, .view-commons-groups-directory > .view-content > .views-row, .view-commons-homepage-content .node-teaser.node-group > .view-content > .views-row, body.front.logged-in .view-commons-homepage-content > .view-content, body.front.logged-in #views-exposed-form-commons-homepage-content-panel-pane-1 .views-exposed-widgets.widgets-active, .page-events .region-three-25-50-25-third .pane-views-panes, .pane-search-result .block-content .search-results, .page-search-user .user-results {
+/* line 57, ../sass/_zerar-commons.scss */
+.commons-pod,
+.page-user .pane-views-panes,
+.front.not-logged-in .pane-views-panes,
+.front.not-logged-in .pane-views,
+.front.not-logged-in body.page-node .pane-views-panes,
+.page-events .view-commons-events-upcoming .view-content,
+.pane-commons-bw-group,
+.view-display-id-commons_events_upcoming_page .views-row,
+.view-commons-groups-directory > .view-content > .views-row,
+.view-commons-homepage-content .node-teaser.node-group > .view-content > .views-row,
+body.front.logged-in .view-commons-homepage-content > .view-content,
+body.front.logged-in #views-exposed-form-commons-homepage-content-panel-pane-1 .views-exposed-widgets.widgets-active,
+.page-events .region-three-25-50-25-third .pane-views-panes,
+.pane-search-result .block-content .search-results,
+.page-search-user .user-results {
   border-radius: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+}
+
+/* line 5, ../sass/drupalbrasil.scss */
+body {
+  background-color: #f4f7fb;
+}
+
+/* line 9, ../sass/drupalbrasil.scss */
+.header-wrapper .header-color-row-one {
+  background: #0d89cf;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 10px 0 rgba(0, 0, 0, 0.01) !important;
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 10px 0 rgba(0, 0, 0, 0.01) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 10px 0 rgba(0, 0, 0, 0.01) !important;
+  margin-bottom: 5px;
+}
+
+/* line 17, ../sass/drupalbrasil.scss */
+#header {
+  background: url("../images/bg.jpg") no-repeat;
+}
+/* line 20, ../sass/drupalbrasil.scss */
+#header #branding {
+  width: 381px;
+  margin: 15px 0;
+  padding: 0;
+}
+/* line 25, ../sass/drupalbrasil.scss */
+#header #site-name {
+  margin: 0;
+  padding: 0;
+}
+/* line 29, ../sass/drupalbrasil.scss */
+#header #site-name a {
+  display: block;
+  height: 90px;
+  width: 381px;
+  text-indent: -9999px;
+  background: url("../../logo.png") no-repeat;
+}
+/* line 37, ../sass/drupalbrasil.scss */
+#header #menu-bar.nav {
+  margin: 55px 0 0;
+  padding: 0;
+  border: none;
+}
+/* line 43, ../sass/drupalbrasil.scss */
+#header #menu-bar.nav ul.menu li a {
+  position: initial;
+  margin: 0;
+  padding: 5px 15px;
+  height: auto;
+  text-shadow: none;
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: initial;
+  color: #fff;
+  background: none;
+}
+/* line 56, ../sass/drupalbrasil.scss */
+#header #menu-bar.nav ul.menu li a:hover {
+  text-decoration: underline;
+}
+/* line 62, ../sass/drupalbrasil.scss */
+#header .region.region-header {
+  float: right;
+  margin-top: 20px;
+}
+/* line 67, ../sass/drupalbrasil.scss */
+#header .region.region-header .commons-utility-links a {
+  color: #fff;
+}
+/* line 71, ../sass/drupalbrasil.scss */
+#header .region.region-header #block-search-form {
+  margin-top: 10px;
+}
+
+/* line 78, ../sass/drupalbrasil.scss */
+#block-menu-menu-sobre-a-drupal-brasil ul li {
+  list-style-image: none;
+  list-style-type: disc;
+}
+/* line 82, ../sass/drupalbrasil.scss */
+#block-menu-menu-sobre-a-drupal-brasil ul li a {
+  font-size: 1em;
+  line-height: 2em;
 }
