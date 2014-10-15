@@ -26,7 +26,7 @@ $databases['default']['default'] = array(
   'driver' => 'mysql',
   'database' => 'drupalbrasil',
   'username' => 'root',
-  'password' => 'root',
+  'password' => '',
   'host' => 'localhost',
   'prefix' => '',
 );

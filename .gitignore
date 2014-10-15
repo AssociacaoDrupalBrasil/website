@@ -5,5 +5,4 @@ docroot/sites/*/private
 
 nbproject/
 .sass-cache/
-*.sql
 *.gz
